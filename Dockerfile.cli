@@ -20,9 +20,9 @@ RUN php artisan key:generate --ansi
 
 # Configure Laravel shop
 RUN php artisan vendor:publish --all
-RUN php artisan migrate
-RUN php artisan aimeos:setup --option=setup/default/demo:1
-RUN php artisan aimeos:cache
+# RUN php artisan migrate
+# RUN php artisan aimeos:setup --option=setup/default/demo:1
+# RUN php artisan aimeos:cache
 
 # Define where the Laravel Root is located
 ENV WEBROOT=public
