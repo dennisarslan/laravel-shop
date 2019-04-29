@@ -15,6 +15,7 @@ RUN composer install --dev
 
 # Laravel requirements
 RUN cp .env.example .env
+RUN chmod -R 777 /app/storage
 RUN php artisan key:generate --ansi
 
 # Configure Laravel shop
