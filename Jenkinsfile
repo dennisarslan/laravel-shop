@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 def jenkinsFile
 stage('Loading Jenkins file') {
-  steps {
+  step {
     sh 'ls -al'
   }
 /*
