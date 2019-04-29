@@ -1,6 +1,6 @@
 docker-compose-yaml: docker-compose.yml
 
-project: laravel-example
+project: laravel-shop
 
 tasks:
 #   pre-rollout:
