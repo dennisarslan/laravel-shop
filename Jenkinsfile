@@ -1,14 +1,19 @@
-#!/usr/bin/env groovy
-def jenkinsFile
-stage('Loading Jenkins file') {
-  step {
-    sh 'ls -al'
+ pipeline {
+  agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10'))
   }
-/*
-jenkinsFile = fileLoader.fromGit('Jenkinsfile.example', 'git@github.com:dennisarslan/laravel-distro.git', 'develop', null, '')
-*/
+  environment {
+    DOCKER_CREDS = credentials('amazeeiojenkins-dockerhub-password')
+    COMPOSE_PROJECT_NAME = "drupaltest-${BUILD_ID}"
+  }
+  stages {
+    stage('Docker login') {
+      steps {
+        sh """
+        ls -al
+        """
+      }
+    }
+  }
 }
-
-/*
-jenkinsFile.start()
-*/
